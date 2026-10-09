@@ -1,0 +1,259 @@
+/* Premium Liquid Glass AI Design System for DataLensAI */
+:root {
+  --bg-dark: #F8FAFC;
+  --bg-card: rgba(255, 255, 255, 0.55);
+  --bg-card-hover: rgba(255, 255, 255, 0.75);
+  --border-glow: rgba(209, 213, 219, 0.65); /* Titanium */
+  --border-glow-hover: rgba(37, 99, 235, 0.45); /* Primary Blue */
+  
+  /* Color Palette: Titanium Glass AI */
+  --primary: #2563EB;
+  --secondary: #06B6D4;
+  --accent: #06B6D4;
+  --highlight: #F59E0B;
+  
+  --neon-cyan: #2563EB; /* Primary Blue */
+  --neon-cyan-glow: rgba(37, 99, 235, 0.15);
+  --neon-violet: #06B6D4; /* Accent Cyan */
+  --neon-violet-glow: rgba(6, 182, 212, 0.15);
+  --neon-emerald: #06B6D4;
+  --neon-emerald-glow: rgba(6, 182, 212, 0.15);
+  --neon-gold: #F59E0B; /* Highlight Amber */
+  --neon-gold-glow: rgba(245, 158, 11, 0.15);
+  --neon-red: #EF4444;
+  
+  --text-primary: #111827; /* Luxury Dark slate */
+  --text-secondary: #4B5563;
+  --text-muted: #9CA3AF;
+  
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Space Mono', monospace;
+  
+  --transition-smooth: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* Reset and Core Layout */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(209, 213, 219, 0.6);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(209, 213, 219, 0.9);
+}
+
+/* Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-sans);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+}
+
+.font-mono {
+  font-family: var(--font-mono);
+}
+
+/* Titanium Background environment */
+.animated-grid-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: radial-gradient(circle at 10% 20%, rgba(37, 99, 235, 0.04) 0%, transparent 40%),
+              radial-gradient(circle at 90% 80%, rgba(6, 182, 212, 0.04) 0%, transparent 45%);
+  z-index: -3;
+  pointer-events: none;
+}
+
+.animated-grid-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    linear-gradient(rgba(209, 213, 219, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(209, 213, 219, 0.08) 1px, transparent 1px);
+  background-size: 50px 50px;
+}
+
+/* Liquid Glass Cards */
+.glass-card {
+  background: var(--bg-card);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid var(--border-glow);
+  border-radius: 12px;
+  box-shadow: 0 4px 20px 0 rgba(17, 24, 39, 0.03), 
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.7);
+  transition: var(--transition-smooth);
+  color: var(--text-primary);
+}
+
+.glass-card:hover {
+  border-color: var(--border-glow-hover);
+  background: var(--bg-card-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 12px 30px 0 rgba(17, 24, 39, 0.06), 
+              inset 0 1px 1px 0 rgba(255, 255, 255, 0.9);
+}
+
+.glass-input {
+  background: rgba(255, 255, 255, 0.75);
+  border: 1px solid var(--border-glow);
+  border-radius: 8px;
+  color: var(--text-primary);
+  padding: 10px 14px;
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  transition: var(--transition-fast);
+  box-shadow: inset 0 1px 2px rgba(17, 24, 39, 0.02);
+}
+
+.glass-input:focus {
+  outline: none;
+  border-color: var(--primary);
+  background: #ffffff;
+  box-shadow: 0 0 8px rgba(37, 99, 235, 0.15);
+}
+
+/* Glow indicators */
+.glow-cyan {
+  color: var(--neon-cyan);
+  text-shadow: 0 0 10px rgba(91, 127, 255, 0.2);
+}
+
+.glow-violet {
+  color: var(--neon-violet);
+  text-shadow: 0 0 10px rgba(123, 97, 255, 0.2);
+}
+
+.glow-emerald {
+  color: var(--neon-emerald);
+}
+
+.glow-amber {
+  color: var(--neon-gold);
+}
+
+.glow-red {
+  color: var(--neon-red);
+}
+
+/* Buttons */
+.btn-primary {
+  position: relative;
+  background: linear-gradient(135deg, var(--neon-cyan), var(--neon-violet));
+  color: #ffffff;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 4px 15px rgba(91, 127, 255, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(123, 97, 255, 0.35);
+}
+
+.btn-secondary {
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.9);
+  color: var(--text-primary);
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-family: var(--font-sans);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  box-shadow: 0 2px 8px rgba(148, 163, 184, 0.05);
+}
+
+.btn-secondary:hover {
+  background: #ffffff;
+  border-color: var(--neon-cyan);
+  transform: translateY(-1px);
+}
+
+/* Grid columns */
+.grid-cols-2 { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.grid-cols-3 { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+.grid-cols-4 { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 20px; }
+
+@media (max-width: 1024px) {
+  .grid-cols-4 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .grid-cols-3 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 768px) {
+  .grid-cols-4 { grid-template-columns: 1fr; }
+  .grid-cols-3 { grid-template-columns: 1fr; }
+  .grid-cols-2 { grid-template-columns: 1fr; }
+}
+
+/* Ingestion flow pipelines */
+.pipeline-flow {
+  position: relative;
+  overflow: hidden;
+}
+
+.pipeline-flow::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(91, 127, 255, 0.4), transparent);
+  animation: flow-run 2.5s linear infinite;
+  pointer-events: none;
+}
+
+@keyframes flow-run {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.landing-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 0 24px;
+  max-width: 1240px;
+  margin: 0 auto;
+}

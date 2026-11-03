@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.env
+.env.*
+!.env.example
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+backend/data/*.sqlite3
+backend/data/payment_screenshots/
+*.log
+*.tmp
